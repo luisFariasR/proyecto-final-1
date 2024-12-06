@@ -1,0 +1,25 @@
+.calculate{
+    color: yellowgreen;
+    border-radius: 15px;
+}
+.btn.calcBtn {
+    background-color: yellow;
+    color: rgb(38, 38, 85);
+    border: none;
+    border-radius: 20px; 
+    padding: 10px 20px; 
+    font-size: 16px;
+    display: flex; 
+    align-items: center; 
+    gap: 10px; 
+    cursor: pointer;
+    transition: background-color 0.3s ease; 
+  }
+  .calculator{
+    align-items: center;
+    justify-content: center;
+  
+  }
+  .calculate{
+    padding-bottom: 2rem;
+  }
