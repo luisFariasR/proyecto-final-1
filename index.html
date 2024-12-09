@@ -24,35 +24,95 @@
     />
     <link rel="stylesheet" href="./styles/style.css" />
     <title>Frontend Mentor | Mortgage repayment calculator</title>
-
   </head>
   <body>
     <div class="container d-flex flex-column col-12 col-md-4">
-      <div class="calculator">
-        
-        <h4>Mortgage Calculator</h4>
-        <a href="">Clear All</a>
-        <div class="input1"></div>
-        <span>Mortgage Amount</span><br>
-        <input type="text" placeholder="$" /></div>
-        <div class="input2">
-        <span>Mortgage Term</span><br>
-        <input type="text" placeholder="years" />
-      </div>
-      <div class="input2">
-        <span> Interest Rate</span><br>
-        <input type="text" placeholder="%" />
-      </div>
-        <div class="">
-          <span> Mortgage Type</span>
-          Repayment Interest Only
+      <div class="whiteBox d-flex flex-column">
+        <div class="calculator">
+          <h1>Mortgage Calculator</h1>
+          <a href="">Clear All</a>
+          <div class="input1 d-flex flex-column">
+            <label for="amount">Mortgage Amount</label>
+            <input class="" type="text" placeholder="$" />
+            <span class="text-danger d-none">This field is required</span>
+          </div>
+
+          <div class="input2 d-flex flex-column">
+            <label for="">Mortgage Term</label>
+            <input type="text" placeholder="years" />
+            <span class="text-danger d-none">This field is required</span>
+          </div>
+          <div class="input3 d-flex flex-column">
+            <label for=""> Interest Rate</label>
+            <input type="text" placeholder="%" />
+            <span class="text-danger d-none">This field is required</span>
+          </div>
         </div>
-        <div class="calculate">
-         <button class="btn calcBtn"><img src="./assets/images/icon-calculator.svg" alt="calculadora"> Calculate Repayments</button>  
-            Total you'll repay over the term
+        <div class="types d-flex flex-column">
+          <label for=""> Mortgage Type</label>
+          <div class="styledCheckbox">
+            <div class="selected">
+              <div class="checkboxRepay">
+                <input class="checkType" name="mortgageType" type="radio" />
+              </div>
+              <div class="repayment"><span> Repayment</span></div>
+            </div>
+            <div class="selected">
+              <div class="checkboxInterest">
+                <input class="checkType " name="mortgageType" type="radio" />
+              </div>
+              <div class="interestOnly"><span> Interest Only</span></div>
+            </div>
+            <span class="text-danger d-none">This field is required</span>
+          </div>
+          <div class="calculate">
+            <button class="btn calcBtn">
+              <img
+                src="./assets/images/icon-calculator.svg"
+                alt="calculadora"
+              />
+              Calculate Repayments
+            </button>
+          </div>
+        </div>
       </div>
-    </div> <!-- cierre de container -->
+      <div>
+        <div class="yourResults bg-dark text-light d-none">
+          <div class="textResult">
+            <h2>Your results</h2>
 
-
+            <p>
+              Your results are shown below based on the information you
+              provided. To adjust the results, edit the form and click
+              “calculate repayments” again.
+            </p>
+          </div>
+          <div class="card bg-primary">
+            <div class="numResult">
+              <h5>Your monthly repayments</h5>
+              <h1>$55555</h1>
+            </div>
+            <div class="last">
+              <h5>Total you'll repay over the term</h5>
+              <h2>$55555</h2>
+            </div>
+          </div>
+        </div>
+        <div class="darkBox bg-dark text-light flex-column">
+          <img
+            src="./assets/images/illustration-empty.svg"
+            alt="calculadoraYboligrafo"
+          />
+          <h2>Results shown here</h2>
+          <div class="textDown">
+            <p>
+              Complete the form and click "calculate repayments" to see what
+              your monthly repayments would be.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- cierre de container -->
   </body>
 </html>

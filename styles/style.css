@@ -1,25 +1,82 @@
-.calculate{
-    color: yellowgreen;
-    border-radius: 15px;
+.calculate {
+  color: yellowgreen;
+  border-radius: 15px;
 }
 .btn.calcBtn {
-    background-color: yellow;
-    color: rgb(38, 38, 85);
-    border: none;
-    border-radius: 20px; 
-    padding: 10px 20px; 
-    font-size: 16px;
-    display: flex; 
-    align-items: center; 
-    gap: 10px; 
-    cursor: pointer;
-    transition: background-color 0.3s ease; 
-  }
-  .calculator{
-    align-items: center;
-    justify-content: center;
-  
-  }
-  .calculate{
-    padding-bottom: 2rem;
-  }
+  background-color: yellow;
+  color: rgb(38, 38, 85);
+  border: none;
+  border-radius: 20px;
+  padding: 10px 20px;
+  font-size: 16px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+}
+.calculator {
+  align-items: center;
+  justify-content: center;
+}
+.calculate {
+  padding-bottom: 2rem;
+}
+.whiteBox {
+  justify-content: space-evenly;
+}
+.yourResults {
+  height: 100vh;
+  padding: 2rem;
+}
+.numResult {
+  border-bottom: solid yellow 1px;
+  padding-bottom: 0.6rem;
+}
+
+.card {
+  padding: 1rem;
+  border-radius: 0.5rem;
+  border-top: solid yellow 6px;
+}
+.last {
+  padding-top: 1.5rem;
+}
+.checkType {
+}
+.selected {
+  border: solid black 1px;
+  display: flex;
+  margin-bottom: 10px;
+}
+.styledCheckbox {
+  justify-content: space-between;
+}
+.darkBox {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+}
+.textDown {
+  display: flex;
+  text-align: center;
+  width: 70%;
+  font-size: 20px;
+  align-content: center;
+}
+.input2,
+.input1,
+.input3 {
+  padding-top: 1rem;
+}
+.checkboxInterest, .checkboxRepay{
+  padding: 0.5rem;
+}
+.repayment, .interestOnly{
+  padding-top: 0.5rem;
+}
