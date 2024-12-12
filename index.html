@@ -15,6 +15,7 @@
       integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
       crossorigin="anonymous"
     ></script>
+    <script src="./scripts/script.js" defer></script>
 
     <link
       rel="icon"
@@ -32,55 +33,56 @@
         <div class="calculator">
           <div class="header d-flex flex-column flex-md-row mt-4">
           <h3>Mortgage Calculator</h3>
-          <a class="mt-2" href="">Clear All</a>
+          <a class="mt-2" href="" id="clear">Clear All</a>
         </div>
           <div class="input1 d-flex flex-column">
             <label class="mb-2" for="amount">Mortgage Amount</label>
-            <!-- <input class="" type="text" placeholder="$" />
-            
-             -->
+   
             <div class="input-group input-group-sm mb-3">
-              <span class="input-group-text" id="inputGroup-sizing-sm">€</span>
+              <span class="input-group-text" id="spanEuro">€</span>
 
               <input
-                type="text"
+                type="number"
                 class="form-control"
                 aria-label="Sizing example input"
                 aria-describedby="inputGroup-sizing-sm"
+                id="mortgageAmount"
               />
             </div>
-            <span class="text-danger d-none">This field is required</span>
+            <span class="text-danger d-none" id="alertAmount">This field is required</span>
           </div>
           <div class="boxSizeChange d-flex flex-column flex-md-row ">
             <div class="input2 d-flex flex-column">
               <label class="mb-2" for="">Mortgage Term</label>
               <div class="input-group input-group-sm mb-3">
                 <input
-                  type="text"
+                  type="number"
                   class="form-control"
                   aria-label="Sizing example input"
                   aria-describedby="inputGroup-sizing-sm"
+                  id="mortgageTerm"
                 />
-                <span class="input-group-text" id="inputGroup-sizing-sm"
+                <span class="input-group-text bg-primary" id="years"
                   >years</span
                 >
               </div>
-              <span class="text-danger d-none">This field is required</span>
+              <span class="yearsSpan text-danger d-none">This field is required</span>
             </div>
             <div class="input3 d-flex flex-column">
               <label class="mb-2" for="">Interest Rate</label>
               <div class="input-group input-group-sm mb-3">
                 <input
-                  type="text"
+                  type="number"
                   class="form-control"
                   aria-label="Sizing example input"
                   aria-describedby="inputGroup-sizing-sm"
+                  id="interestRate"
                 />
-                <span class="input-group-text" id="inputGroup-sizing-sm"
+                <span class="input-group-text" id="percentageSpan"
                   >%</span
                 >
               </div>
-              <span class="text-danger d-none">This field is required</span>
+              <span class="text-danger d-none" id="alertRate">This field is required</span>
             </div>
           </div>
         </div>
@@ -89,7 +91,7 @@
           <div class="styledCheckbox">
             <div class="selected">
               <div class="checkboxRepay">
-                <input class="checkType" name="mortgageType" type="radio" />
+                <input class="checkType" name="mortgageType" type="radio" id="repaymentSelected" />
               </div>
               <div class="repayment"><span> Repayment</span></div>
             </div>
