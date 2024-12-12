@@ -30,12 +30,12 @@ calcBtn.addEventListener("click", function compute() {
     const result = `
               <div class="numResult">
                 <h5>Your monthly repayments</h5>
-                <h1 id="monthlyRepayment">$${res}</h1>
+                <h1 id="monthlyRepayment">£${res}</h1>
               </div>
               <hr class="hr" />
               <div class="last">
                 <h5>Total you'll repay over the term</h5>
-                <h2>$${(res * 12 * getTerm()).toFixed(2)}</h2>
+                <h2>$${(res * getTerm()).toFixed(2)}</h2>
             
             </div>`;
     card.innerHTML = result;
@@ -49,12 +49,12 @@ calcBtn.addEventListener("click", function compute() {
     card.innerHTML = `
               <div class="numResult">
                 <h5>Your monthly repayments</h5>
-                <h1 id="monthlyRepayment">$${((intereses * 12) * getTerm()).toFixed(2)}</h1>
+                <h1 id="monthlyRepayment">£${intereses.toFixed(2)}</h1>
               </div>
               <hr class="hr" />
               <div class="last">
                 <h5>Total you'll repay over the term</h5>
-                <h2>$${intereses.toFixed(2)}</h2>
+                <h4>£${(intereses *  getTerm()).toFixed(2)}</h2>
                           </div>`;
 
     showResults();
