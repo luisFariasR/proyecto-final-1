@@ -28,130 +28,151 @@
   </head>
   <body class="bg-primary">
     <div class="main">
-    <div class="container d-flex flex-column flex-md-row col-md-6">
-      <div class="whiteBox d-flex flex-column col-md-6 ">
-        <div class="calculator">
-          <div class="header d-flex flex-column flex-md-row mt-4">
-          <h3>Mortgage Calculator</h3>
-          <a class="mt-2" href="" id="clear">Clear All</a>
-        </div>
-          <div class="input1 d-flex flex-column">
-            <label class="mb-2" for="amount">Mortgage Amount</label>
-   
-            <div class="input-group input-group-sm mb-3">
-              <span class="input-group-text" id="spanEuro">€</span>
-
-              <input
-                type="number"
-                class="form-control"
-                aria-label="Sizing example input"
-                aria-describedby="inputGroup-sizing-sm"
-                id="mortgageAmount"
-              />
+      <div class="container d-flex flex-column flex-md-row col-md-6">
+        <div class="whiteBox d-flex flex-column col-md-6">
+          <div class="calculator">
+            <div class="header d-flex flex-column flex-md-row mt-4">
+              <h3>Mortgage Calculator</h3>
+              <a class="mt-2" href="" id="clear">Clear All</a>
             </div>
-            <span class="text-danger d-none" id="alertAmount">This field is required</span>
-          </div>
-          <div class="boxSizeChange d-flex flex-column flex-md-row ">
-            <div class="input2 d-flex flex-column">
-              <label class="mb-2" for="">Mortgage Term</label>
+            <div class="input1 d-flex flex-column">
+              <label class="mb-2" for="amount">Mortgage Amount</label>
+
               <div class="input-group input-group-sm mb-3">
+                <span class="input-group-text bg-primary-subtle" id="spanEuro">€</span>
+
                 <input
                   type="number"
                   class="form-control"
                   aria-label="Sizing example input"
                   aria-describedby="inputGroup-sizing-sm"
-                  id="mortgageTerm"
+                  id="mortgageAmount"
                 />
-                <span class="input-group-text bg-primary" id="years"
-                  >years</span
-                >
               </div>
-              <span class="yearsSpan text-danger d-none">This field is required</span>
+              <span class="text-danger d-none" id="alertAmount"
+                >This field is required</span
+              >
             </div>
-            <div class="input3 d-flex flex-column">
-              <label class="mb-2" for="">Interest Rate</label>
-              <div class="input-group input-group-sm mb-3">
-                <input
-                  type="number"
-                  class="form-control"
-                  aria-label="Sizing example input"
-                  aria-describedby="inputGroup-sizing-sm"
-                  id="interestRate"
-                />
-                <span class="input-group-text" id="percentageSpan"
-                  >%</span
+            <div class="boxSizeChange d-flex flex-column flex-md-row">
+              <div class="input2 d-flex flex-column">
+                <label class="mb-2" for="">Mortgage Term</label>
+                <div class="input-group input-group-sm mb-3">
+                  <input
+                    type="number"
+                    class="form-control"
+                    aria-label="Sizing example input"
+                    aria-describedby="inputGroup-sizing-sm"
+                    id="mortgageTerm"
+                  />
+                  <span class="input-group-text bg-primary-subtle" id="years"
+                    >years</span
+                  >
+                </div>
+                <span class="yearsSpan text-danger d-none"
+                  >This field is required</span
                 >
               </div>
-              <span class="text-danger d-none" id="alertRate">This field is required</span>
+              <div class="input3 d-flex flex-column">
+                <label class="mb-2" for="">Interest Rate</label>
+                <div class="input-group input-group-sm mb-3">
+                  <input
+                    type="number"
+                    class="form-control"
+                    aria-label="Sizing example input"
+                    aria-describedby="inputGroup-sizing-sm"
+                    id="interestRate"
+                  />
+                  <span class="input-group-text bg-primary-subtle" id="percentageSpan">%</span>
+                </div>
+                <span class="text-danger d-none" id="alertRate"
+                  >This field is required</span
+                >
+              </div>
+            </div>
+          </div>
+          <div class="types d-flex flex-column">
+            <label class="mb-2" for=""> Mortgage Type</label>
+            <div class="styledCheckbox">
+              <div class="selected">
+                <div class="checkboxRepay">
+                  <input
+                    class="checkType"
+                    name="mortgageType"
+                    type="radio"
+                    id="repaymentSelected"
+                  />
+                </div>
+                <div class="repayment"><span> Repayment</span></div>
+              </div>
+              <div class="selected">
+                <div class="checkboxInterest">
+                  <input
+                    class="checkType"
+                    name="mortgageType"
+                    type="radio"
+                    id="interestOnly"
+                  />
+                </div>
+                <div class="interestOnly"><span> Interest Only</span></div>
+              </div>
+              <span class="text-danger d-none" id="typeAlert"
+                >This field is required</span
+              >
+            </div>
+            <div class="calculate">
+              <button class="btn calcBtn w-md-3">
+                <img
+                  src="./assets/images/icon-calculator.svg"
+                  alt="calculadora"
+                />
+                Calculate Repayments
+              </button>
             </div>
           </div>
         </div>
-        <div class="types d-flex flex-column">
-          <label class="mb-2" for=""> Mortgage Type</label>
-          <div class="styledCheckbox">
-            <div class="selected">
-              <div class="checkboxRepay">
-                <input class="checkType" name="mortgageType" type="radio" id="repaymentSelected" />
-              </div>
-              <div class="repayment"><span> Repayment</span></div>
-            </div>
-            <div class="selected">
-              <div class="checkboxInterest">
-                <input class="checkType" name="mortgageType" type="radio" />
-              </div>
-              <div class="interestOnly"><span> Interest Only</span></div>
-            </div>
-            <span class="text-danger d-none">This field is required</span>
-          </div>
-          <div class="calculate">
-            <button class="btn calcBtn w-md-3">
-              <img
-                src="./assets/images/icon-calculator.svg"
-                alt="calculadora"
-              />
-              Calculate Repayments
-            </button>
-          </div>
-        </div>
-      </div>
-      <div>
-        <div class="yourResults d-none bg-dark text-light   bg-dark text-light flex-column col-md-12 offset-md-1 vh-sm-100">
-          <div class="textResult">
-            <h2>Your results</h2>
+        <div>
+          <div
+            class="yourResults d-none bg-dark text-light bg-dark text-light flex-column col-md-12 offset-md-1 vh-sm-100"
+          >
+            <div class="textResult">
+              <h2>Your results</h2>
 
-            <p>
-              Your results are shown below based on the information you
-              provided. To adjust the results, edit the form and click
-              “calculate repayments” again.
-            </p>
-          </div>
-          <div class="card bg-primary">
-            <div class="numResult">
-              <h5>Your monthly repayments</h5>
-              <h1>$55555</h1>
+              <p>
+                Your results are shown below based on the information you
+                provided. To adjust the results, edit the form and click
+                “calculate repayments” again.
+              </p>
             </div>
-            <div class="last">
-              <h5>Total you'll repay over the term</h5>
-              <h2>$55555</h2>
+            <div class="card bg-primary">
+              <div class="numResult">
+                <h5>Your monthly repayments</h5>
+                <h1 id="monthlyRepayment">$55555</h1>
+              </div>
+              <hr class="hr" />
+              <div class="last">
+                <h5>Total you'll repay over the term</h5>
+                <h2>$55555</h2>
+              </div>
             </div>
           </div>
-        </div>
-        <div class="darkBox bg-dark text-light   bg-dark text-light flex-column col-md-12 offset-md-1 vh-sm-100">
-          <img
-            src="./assets/images/illustration-empty.svg"
-            alt="calculadoraYboligrafo"
-          />
-          <h2>Results shown here</h2>
-          <div class="textDown">
-            <p>
-              Complete the form and click "calculate repayments" to see what
-              your monthly repayments would be.
-            </p>
+          <div
+            class="darkBox bg-dark text-light bg-dark text-light flex-column col-md-12 offset-md-1 vh-sm-100"
+          >
+            <img
+              src="./assets/images/illustration-empty.svg"
+              alt="calculadoraYboligrafo"
+            />
+            <h2>Results shown here</h2>
+            <div class="textDown">
+              <p>
+                Complete the form and click "calculate repayments" to see what
+                your monthly repayments would be.
+              </p>
+            </div>
           </div>
         </div>
       </div>
+      <!-- cierre de container -->
     </div>
-    <!-- cierre de container -->
-  </div>
   </body>
 </html>

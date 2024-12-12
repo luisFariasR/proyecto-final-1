@@ -47,7 +47,7 @@
   padding: 2rem;
 }
 .numResult {
-  border-bottom: solid yellow 1px;
+ /*  border-bottom: solid yellow 1px; */
   padding-bottom: 0.6rem;
 }
 
@@ -116,4 +116,8 @@
 }
 .repayment, .interestOnly{
   padding-top: 0.5rem;
+}
+.hr{
+  color: yellow;
+  size: 4px;
 }
