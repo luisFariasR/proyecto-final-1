@@ -18,24 +18,31 @@ const monthlyRepayment = document.querySelector(`#monthlyRepayment`);
 const numResult = document.querySelector(`.numResult`);
 const card = document.querySelector(`.card`);
 
-calcBtn.addEventListener("click", function compute() {
+function compute() {
   let r = getInterest();
   let n = getTerm();
   let p = getAmount();
+  let numerador = p * r * (1 + r) ** n;
+  let denominador = (1 + r) ** n - 1;
+  let res = (numerador / denominador).toFixed(2);
+  return res;
+
+}
+
+calcBtn.addEventListener("click", () => {
+  const track = compute();
   if (repaymentSelected.checked) {
-    let numerador = p * r * (1 + r) ** n;
-    let denominador = (1 + r) ** n - 1;
-    let res = (numerador / denominador).toFixed(2);
     card.innerHTML = "";
+    
     const result = `
               <div class="numResult">
                 <h5>Your monthly repayments</h5>
-                <h1 id="monthlyRepayment">£${res}</h1>
+                <h1 id="monthlyRepayment">£${track}</h1>
               </div>
               <hr class="hr" />
               <div class="last">
                 <h5>Total you'll repay over the term</h5>
-                <h2>$${(res * getTerm()).toFixed(2)}</h2>
+                <h2>$${(track * getTerm()).toFixed(2)}</h2>
             
             </div>`;
     card.innerHTML = result;
@@ -46,15 +53,16 @@ calcBtn.addEventListener("click", function compute() {
     card.innerHTML = "";
     typeAlert.classList.add(`d-none`);
     const intereses = getOnlyInterest();
+    const iteresesPorMes = getMonthInterest();
     card.innerHTML = `
               <div class="numResult">
                 <h5>Your monthly repayments</h5>
-                <h1 id="monthlyRepayment">£${intereses.toFixed(2)}</h1>
+                <h1 id="monthlyRepayment">£${iteresesPorMes.toFixed(2)}</h1>
               </div>
               <hr class="hr" />
               <div class="last">
                 <h5>Total you'll repay over the term</h5>
-                <h4>£${(intereses *  getTerm()).toFixed(2)}</h2>
+                <h4>£${intereses.toFixed(2)}</h4>
                           </div>`;
 
     showResults();
@@ -79,12 +87,12 @@ function getTerm() {
   }
 }
 function getOnlyInterest() {
-  const int = getInterest();
-  const p = getAmount();
-  const term = getTerm() / 12;
-
-  let totalInterestOnly = (int * 100) * term;
-  return totalInterestOnly;
+  let onlyinterest = (compute() * getTerm()) - getAmount();
+  return onlyinterest;
+}
+function getMonthInterest() {
+  let monthlyInterest = getOnlyInterest() / getTerm();
+  return monthlyInterest;
 }
 
 function getInterest() {
